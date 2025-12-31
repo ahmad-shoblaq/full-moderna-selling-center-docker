@@ -1,0 +1,86 @@
+/* css/receipt.css - Styling for receipt.php */
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, #142850, #000);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+}
+
+.receipt-box {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  text-align: left;
+}
+
+h2 {
+  margin-top: 0;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  color: #fff;
+}
+
+table th, table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: left;
+}
+
+a {
+  display: inline-block;
+  margin-top: 20px;
+  color: #1e90ff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button#print-btn {
+  margin-top: 20px;
+  padding: 10px 16px;
+  background-color: #1e90ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .receipt-box, .receipt-box * {
+    visibility: visible;
+  }
+  .receipt-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  #print-btn, a {
+    display: none;
+  }
+}

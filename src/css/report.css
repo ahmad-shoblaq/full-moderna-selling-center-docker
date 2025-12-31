@@ -1,0 +1,54 @@
+/* report.css - Styling for the Report page */
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, #142850, #000);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  width: 700px;
+  max-width: 90%;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+th {
+  background-color: rgba(255, 255, 255, 0.1);
+  font-weight: bold;
+}
+
+a {
+  color: #1e90ff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,15 @@
+# Environment / secrets
+.env
+
+# PHP dependencies (if any)
+vendor/
+
+# Logs
+*.log
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+
+# Docker local data (optional safety)
+docker/mysql/data/
