@@ -1,14 +1,19 @@
+version: "3.8"
+
 services:
   db:
     image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password
     environment:
       MYSQL_ROOT_PASSWORD: rootpass
       MYSQL_DATABASE: selling_center
+      MYSQL_USER: appuser
+      MYSQL_PASSWORD: apppass
     volumes:
       - db_data:/var/lib/mysql
-      - ./docker/mysql/init:/docker-entrypoint-initdb.d
+      - ./docker/mysql/init:/docker-entrypoint-initdb.d:ro
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-prootpass"]
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -prootpass || exit 1"]
       interval: 5s
       timeout: 3s
       retries: 20
@@ -21,8 +26,8 @@ services:
     environment:
       DB_HOST: db
       DB_NAME: selling_center
-      DB_USER: root
-      DB_PASS: rootpass
+      DB_USER: appuser
+      DB_PASS: apppass
     depends_on:
       db:
         condition: service_healthy
