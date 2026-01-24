@@ -2,7 +2,7 @@
 $host = getenv('DB_HOST') ?: 'db';
 $db   = getenv('DB_NAME') ?: 'selling_center';
 $user = getenv('DB_USER') ?: 'appuser';
-$pass = getenv('DB_PASS') ?: 'apppass'; // <-- FIXED (2 p's)
+$pass = getenv('DB_PASS') ?: 'apppass';
 
 $conn = new mysqli($host, $user, $pass, $db);
 
