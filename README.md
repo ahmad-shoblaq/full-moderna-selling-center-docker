@@ -19,32 +19,45 @@ Before deploying this project on a VPS, the following must be installed:
 
 ## Deployment Instructions (VPS)
 
-### 1. Connect to the VPS
+### 1. Connect to the 
+```bash
 ssh root@<VPS_IP>
+```
 
 ### 2. Install Git
+```bash
 sudo apt update
 sudo apt install git -y
+```
 
 ### 3. Install Docker
+```bash
 sudo apt install docker.io -y
 sudo systemctl start docker
 sudo systemctl enable docker
+```
 
 ### 4. Install Docker Compose
+```bash
 sudo apt install docker-compose -y
+```
 
 ### 5. Clone the GitHub repository
+```bash
 git clone https://github.com/ahmad-shoblaq/full-moderna-selling-center-docker.git
 cd full-moderna-selling-center-docker
+```
 
 ### 6. Build and run the containers
+```bash
 docker-compose down -v
 docker-compose up -d --build
+```
 
 ### 7. Verify containers are running
+```bash 
 docker-compose ps
-
+```
 ---
 
 ## Production URL
@@ -85,4 +98,5 @@ http://64.226.83.12:8080/
 
 ## Author
 *Ahmad Monther Issa Shoblaq*
+
 *120220369*
